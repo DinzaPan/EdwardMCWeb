@@ -1,0 +1,356 @@
+/* Reset de estilos */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a192f; /* Azul oscuro */
+    color: white;
+}
+
+/* Encabezado con menú hamburguesa */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #091123;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Menú hamburguesa */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Menú animado */
+nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #091123;
+    padding: 0;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+nav.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    background: #1e90ff;
+    transform: scale(1.05);
+}
+
+/* Contenedor de Cards */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background: linear-gradient(145deg, #2c2c2c, #3a3a3a);
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen Banner */
+.card-banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Contenido de la Card */
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 20px;
+    margin: 10px 0;
+    color: white;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* Botón de descarga */
+.download-btn {
+    display: block;
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #218838;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+}
+
+/* Contenedor de la licencia */
+.license-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #1a1a1a; /* Fondo oscuro */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Títulos */
+.license-container h2 {
+    text-align: center;
+    color: #1e90ff; /* Azul llamativo */
+}
+
+.license-container h3 {
+    margin-top: 20px;
+    color: #28a745; /* Verde */
+}
+
+/* Párrafos */
+.license-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Animación de desvanecimiento */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card {
+    position: relative; /* Permite posicionar el icono */
+}
+
+.card-status-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;  /* Tamaño del icono */
+    height: 25px;
+    opacity: 0.9;
+}
+
+/* Sección de addons nuevos */
+.new-addons-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.new-addons-title {
+    font-size: 24px;
+    color: green;
+    margin-bottom: 15px;
+}
+
+.new-addons-title2 {
+    font-size: 24px;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
+
+/* Contenedor de los 7 addons nuevos con desplazamiento horizontal */
+.new-addons-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    justify-content: flex-start;
+    scroll-behavior: smooth;
+}
+
+/* Hacer que las cards mantengan su tamaño original */
+.new-addons-container .card {
+    min-width: 320px; /* Tamaño original de la Card */
+    max-width: 310px;
+    flex-shrink: 0; /* Evita que se reduzcan al hacer scroll */
+}
+
+/* Scroll personalizado para la fila de 7 addons */
+.new-addons-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.new-addons-container::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 4px;
+}
+
+.new-addons-container::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Cards normales (todos los addons) */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.comments-section a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de Créditos */
+.credits-section {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.credit-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative; /* Para posicionar los iconos dentro de la tarjeta */
+}
+
+.credit-card h3 {
+    font-size: 22px;
+    color: #1e90ff;
+}
+
+.credit-card p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Redes Sociales */
+.social-links {
+    position: absolute; /* Para poner los iconos en la esquina */
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 768px) {
+    #menu {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
