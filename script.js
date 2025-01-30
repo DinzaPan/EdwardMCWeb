@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const allAddonsContainer = document.querySelector(".cards-container");
 
     // Obtener las cards desde el index.html
-    fetch("../index.html")
+    fetch("index.html")
         .then(response => response.text())
         .then(html => {
             const parser = new DOMParser();
