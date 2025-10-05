@@ -36,7 +36,7 @@ const addonsData = [
     {
         id: 4,
         title: "Login Registre V5.3",
-        description: "✨!🎃Este addon añade una UI o un sistema que ara que los jugadores al momento de entrar al mundo deben registrarse poniendo nombre de Usuario y Contraseña Para Completar El Registro Si no quieren registrarse los usuarios no podran acceder.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ📛🎃Ya Cúando Se Aya Registrado Y Termine De Jugar En El Server Cuando se salgan y Vuelvan a Entrar Al Servidor tendarán que iniciar sesión con su nombre de usuario y contraseña.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ⚠️🎃Importantes No Olvides Tu Nombre De Usuario Y Contraseña.",
+        description: "✨!🎃Este addon añade una UI o un sistema que ara que los jugadores al momento de entrar al mundo deben registrarse poniendo nombre de Usuario y Contraseña Para Completar El Registro Si no quieren registrarse los usuarios no podran acceder.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ📛🎃Ya Cúando Se Aya Registrado Y Termine De Jugar En El Server Cuando se salgan y Vuelvan a Entrar Al Servidor tendarán que iniciar sesión con su nombre de usuario y contraseña.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ⚠️🎃Importantes No Olvides Tu Nombre De Usuario Y Contraseña.",
         cover_image: "./img/Registre.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/IilYSoH4TtS",
