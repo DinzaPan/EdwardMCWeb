@@ -3,18 +3,18 @@ const addonsData = [
     {
         id: 1,
         title: "Custom Command V6.4",
-        description: "🌟¡Descubre Command Personalizados Como !kit o !lobby Para Minecraft Bedrock 1.21.93 +! 🚀🌍 ",
+        description: "🌟¡🎃Descubre Command Personalizados Como !kit o !lobby Para Minecraft Bedrock 1.21.93 +! 🚀🌍 ",
         cover_image: "./img/Commd.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/fNeu4l",
         tags: ["custom", "command", "personalizado"],
-        last_updated: "2025-10-5 : 5:20 PM",
+        last_updated: "2025-10-5",
         file_size: "196.89 KB"
     },
     {
         id: 2,
         title: "Welcome System V3.7",
-        description: "➡️Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
+        description: "➡️🎃Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
         cover_image: "./img/Welcome.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/slCCvU",
@@ -25,12 +25,12 @@ const addonsData = [
     {
         id: 3,
         title: "Shop UI V1.5",
-        description: "La descripción del addon",
+        description: "➡️🎃Añade una Tienda a Tu Servidor de Minecraft que te Permite Comprar items en Menu UI increíble, Creador Y Creditos Edward Gamer : Cappytqm28 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Este Addon Se  Abre Con El Item Reloj o Clock 🧭 También Se Puede Abrir Escribiendo Esto En El Chat .Shop o .Shop Recuerda Añadirte Un Scoreboard añadiendo Dinero Si Quieres El Tutorial Completo en Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/ShopUI.jpg",
-        version: "1.21+",
-        download_link: "TU_URL_DE_DESCARGA",
+        version: "1.21.111",
+        download_link: "https://cuty.io/WeeFetphDuKo",
         tags: ["Tienda", "Dinero", "Menu UI"],
-        last_updated: "2025-10-4",
+        last_updated: "2025-10-5",
         file_size: "5.7 MB"
     }
 ];
