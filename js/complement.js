@@ -43,6 +43,39 @@ const addonsData = [
         tags: ["Logib", "Registre", "Seguridad"],
         last_updated: "2025-10-5",
         file_size: "5.7 MB"
+    },
+    {
+        id: 5,
+        title: "Rank Chat V9.4",
+        description: "La descripción del addon",
+        cover_image: "./img/Rango.jpg",
+        version: "1.21.111",
+        download_link: "TU_URL_DE_DESCARGA",
+        tags: ["Rangos", "Menu UI", "Servidores"],
+        last_updated: "2025-10-5",
+        file_size: "5.7 MB"
+    },
+    {
+        id: 6,
+        title: "Menú Warp V9.9",
+        description: "La descripción del addon",
+        cover_image: "./img/MenuWarp.jpg",
+        version: "1.21.111",
+        download_link: "TU_URL_DE_DESCARGA",
+        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
+        last_updated: "2025-10-5",
+        file_size: "5.7 MB"
+    },
+    {
+        id: 7,
+        title: "Custom NPC V4.4",
+        description: "La descripción del addon",
+        cover_image: "./img/Npc.jpg",
+        version: "1.21.111",
+        download_link: "TU_URL_DE_DESCARGA",
+        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
+        last_updated: "2025-10-5",
+        file_size: "5.7 MB"
     }
 ];
 
