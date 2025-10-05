@@ -21,6 +21,17 @@ const addonsData = [
         tags: ["Bienvenida", "Mensaje", "servidores"],
         last_updated: "2025-10-5",
         file_size: "207.97 KB"
+    },
+    {
+        id: 3,
+        title: "Rango Chat V9.4",
+        description: "La descripción del addon",
+        cover_image: "./img/(imagen).jpg",
+        version: "1.21+",
+        download_link: "TU_URL_DE_DESCARGA",
+        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
+        last_updated: "2025-10-4",
+        file_size: "5.7 MB"
     }
 ];
 
