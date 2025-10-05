@@ -31,7 +31,7 @@ const addonsData = [
         download_link: "https://cuty.io/WeeFetphDuKo",
         tags: ["Tienda", "Dinero", "Menu UI"],
         last_updated: "2025-10-5",
-        file_size: "5.7 MB"
+        file_size: "139.31 KB" 
     }
 ];
 
