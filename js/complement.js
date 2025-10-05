@@ -13,14 +13,14 @@ const addonsData = [
     },
     {
         id: 2,
-        title: "Epic Structures",
-        description: "Añade estructuras épicas y generación de edificios avanzados al mundo de Minecraft. Incluye castillos, ciudades antiguas, templos misteriosos y mucho más para explorar.",
+        title: "Welcome System",
+        description: "Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. 🎉 Al unirse a tu mundo, Recibirán Un Na Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock.",
         cover_image: "./img/Commd.jpg",
-        version: "1.21+",
-        download_link: "TU_URL_DE_DESCARGA",
-        tags: ["structures", "worldgen", "exploration"],
-        last_updated: "2025-10-4",
-        file_size: "5.7 MB"
+        version: "1.21.111",
+        download_link: "https://cuty.io/slCCvU",
+        tags: ["Bienvenida", "Mensaje", "servidores"],
+        last_updated: "2025-10-5",
+        file_size: "207.97 KB"
     }
 ];
 
