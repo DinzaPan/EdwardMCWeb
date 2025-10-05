@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Uso - EdwardMC Addons</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/lisc.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <h1 class="site-title">EdwardMC</h1>
+        </div>
+        
+        <!-- Botón Volver Atrás -->
+        <button class="back-button-nav" onclick="goBack()">
+            <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Volver
+        </button>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="license-header">
+            <h1 class="page-title">Términos de Uso</h1>
+            <p class="license-subtitle">Condiciones para el uso de los addons de EdwardMC</p>
+        </div>
+
+        <div class="license-content">
+            <div class="license-section">
+                <h2 class="license-section-title">📝 Acuerdo de Licencia</h2>
+                <div class="license-text">
+                    <p>Al descargar y utilizar cualquier addon de EdwardMC, usted acepta automáticamente los siguientes términos y condiciones de uso.</p>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">✅ Permisos Concedidos</h2>
+                <div class="license-text">
+                    <ul class="license-list">
+                        <li>Uso personal y no comercial en servidores privados</li>
+                        <li>Modificación para uso personal (no distribución)</li>
+                        <li>Integración en packs de texturas personales</li>
+                        <li>Uso en contenido de YouTube con atribución adecuada</li>
+                        <li>Implementación en servidores de Minecraft con fines no comerciales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">❌ Restricciones</h2>
+                <div class="license-text">
+                    <ul class="license-list">
+                        <li>Prohibida la redistribución sin permiso explícito</li>
+                        <li>No se permite el uso comercial sin autorización</li>
+                        <li>Prohibida la venta de los addons o contenido derivado</li>
+                        <li>No modificar los créditos de autoría</li>
+                        <li>Prohibido el uso en servidores con microtransacciones P2W</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">🎮 Uso en Servidores</h2>
+                <div class="license-text">
+                    <ul class="license-list">
+                        <li>Se permite el uso en servidores públicos y privados</li>
+                        <li>Atribución requerida en la descripción del servidor</li>
+                        <li>No se requiere pago por uso en servidores</li>
+                        <li>Prohibido el uso en servidores que promuevan contenido ofensivo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">📹 Contenido de Creación</h2>
+                <div class="license-text">
+                    <ul class="license-list">
+                        <li>Se permite el uso en videos de YouTube, Twitch, etc.</li>
+                        <li>Atribución requerida en la descripción del video</li>
+                        <li>Enlace al addon original en la descripción</li>
+                        <li>No se requiere permiso para contenido monetizado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">⚖️ Responsabilidades</h2>
+                <div class="license-text">
+                    <ul class="license-list">
+                        <li>Los addons se proporcionan "tal cual" sin garantías</li>
+                        <li>No nos hacemos responsables de daños en mundos</li>
+                        <li>El usuario es responsable de hacer backups</li>
+                        <li>Compatible con versiones específicas de Minecraft</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">🔒 Privacidad</h2>
+                <div class="license-text">
+                    <ul class="license-list">
+                        <li>No recopilamos datos personales</li>
+                        <li>Los addons no contienen malware o tracking</li>
+                        <li>Descargas seguras desde fuentes oficiales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-section">
+                <h2 class="license-section-title">📞 Contacto y Soporte</h2>
+                <div class="license-text">
+                    <p>Para solicitudes de uso comercial, colaboraciones o reportar violaciones de licencia:</p>
+                    <ul class="license-list">
+                        <li>Discord: <a href="https://discord.gg/pyMC2nJaaq" class="studio-link">EdwardMC</a></li>
+                        <li>Email: ????????</li>
+                        <li>Reportar uso indebido: ????????</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-footer">
+                <div class="license-version">
+                    <p><strong>Versión 2.0</strong> - Actualizado: Enero 2024</p>
+                </div>
+                <div class="license-agreement">
+                    <p>Al descargar cualquier addon de EdwardMC, usted confirma que ha leído, entendido y aceptado estos términos de uso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para volver atrás - CORREGIDA
+        function goBack() {
+            // Si hay historial, volver atrás
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                // Si no hay historial, redirigir al inicio
+                window.location.href = '../index.html';
+            }
+        }
+
+        // También hacer que el botón responda al Enter
+        document.addEventListener('DOMContentLoaded', function() {
+            const backButton = document.querySelector('.back-button-nav');
+            
+            backButton.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    goBack();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
