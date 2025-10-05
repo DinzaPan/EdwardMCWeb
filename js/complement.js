@@ -40,7 +40,7 @@ const addonsData = [
         cover_image: "./img/Registre.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/IilYSoH4TtS",
-        tags: ["Logib", "Registre", "Seguridad"],
+        tags: ["Login", "Registre", "Seguridad"],
         last_updated: "2025-10-5",
         file_size: "2.16 MB"
     },
@@ -62,7 +62,7 @@ const addonsData = [
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.111",
         download_link: "TU_URL_DE_DESCARGA",
-        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
+        tags: ["Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
         last_updated: "2025-10-5",
         file_size: "5.7 MB"
     },
