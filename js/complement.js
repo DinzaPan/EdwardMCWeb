@@ -15,7 +15,7 @@ const addonsData = [
         id: 2,
         title: "Epic Structures",
         description: "Añade estructuras épicas y generación de edificios avanzados al mundo de Minecraft. Incluye castillos, ciudades antiguas, templos misteriosos y mucho más para explorar.",
-        cover_image: "./img/Rango.jpg",
+        cover_image: "./img/Commd.jpg",
         version: "1.21+",
         download_link: "TU_URL_DE_DESCARGA",
         tags: ["structures", "worldgen", "exploration"],
