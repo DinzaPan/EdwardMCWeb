@@ -14,7 +14,7 @@ const addonsData = [
     {
         id: 2,
         title: "Welcome System",
-        description: "Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. 🎉 Al unirse a tu mundo, Recibirán Un Na Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock.",
+        description: "Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. 🎉 Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
         cover_image: "./img/Welcome.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/slCCvU",
