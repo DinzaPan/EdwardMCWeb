@@ -25,7 +25,7 @@ const addonsData = [
     {
         id: 3,
         title: "Shop UI V1.5",
-        description: "➡️🎃Añade una Tienda a Tu Servidor de Minecraft que te Permite Comprar items en Menu UI increíble, Creador Y Creditos Edward Gamer : Cappytqm28 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤ➡️🎃Este Addon Se  Abre Con El Item Reloj o Clock 🧭 También Se Puede Abrir Escribiendo Esto En El Chat .Shop o .Shop Recuerda Añadirte Un Scoreboard añadiendo Dinero Si Quieres El Tutorial Completo en Mi Canal De Youtube : Edward Gamer Addon",
+        description: "➡️🎃Añade una Tienda a Tu Servidor de Minecraft que te Permite Comprar items en Menu UI increíble, Creador Y Creditos Edward Gamer : Cappytqm28. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Este Addon Se  Abre Con El Item Reloj o Clock 🧭 También Se Puede Abrir Escribiendo Esto En El Chat .Shop o .Shop Recuerda Añadirte Un Scoreboard añadiendo Dinero Si Quieres El Tutorial Completo en Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/ShopUI.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/WeeFetphDuKo",
