@@ -15,7 +15,7 @@ const addonsData = [
         id: 2,
         title: "Welcome System",
         description: "Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. 🎉 Al unirse a tu mundo, Recibirán Un Na Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock.",
-        cover_image: "./img/Commd.jpg",
+        cover_image: "./img/Welcome.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/slCCvU",
         tags: ["Bienvenida", "Mensaje", "servidores"],
