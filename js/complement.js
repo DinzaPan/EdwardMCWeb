@@ -2,18 +2,18 @@
 const addonsData = [
     {
         id: 1,
-        title: "Custom Command",
+        title: "Custom Command V6.4",
         description: "🌟¡Descubre Command Personalizados Como !kit o !lobby Para Minecraft Bedrock 1.21.93 +! 🚀🌍 ",
         cover_image: "./img/Commd.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/fNeu4l",
-        tags: ["combat", "mechanics", "animations"],
+        tags: ["custom", "command", "personalizado"],
         last_updated: "2025-10-5 : 5:20 PM",
         file_size: "196.89 KB"
     },
     {
         id: 2,
-        title: "Welcome System",
+        title: "Welcome System V3.7",
         description: "➡️Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
         cover_image: "./img/Welcome.jpg",
         version: "1.21.111",
@@ -24,12 +24,12 @@ const addonsData = [
     },
     {
         id: 3,
-        title: "Shop UI",
+        title: "Shop UI V1.5",
         description: "La descripción del addon",
-        cover_image: "./img/(imagen).jpg",
+        cover_image: "./img/ShopUI.jpg",
         version: "1.21+",
         download_link: "TU_URL_DE_DESCARGA",
-        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
+        tags: ["Tienda", "Dinero", "Menu UI"],
         last_updated: "2025-10-4",
         file_size: "5.7 MB"
     }
