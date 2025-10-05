@@ -3,13 +3,13 @@ const addonsData = [
     {
         id: 1,
         title: "Custom Command",
-        description: "🌟¡Descubre Command Personalizados Como !kit o !lobby Para Minecraft Bedrock 1.21.93 +! 🚀🌍💖 ",
+        description: "🌟¡Descubre Command Personalizados Como !kit o !lobby Para Minecraft Bedrock 1.21.93 +! 🚀🌍 ",
         cover_image: "./img/Commd.jpg",
-        version: "1.21+",
-        download_link: "TU_URL_DE_DESCARGA",
+        version: "1.21.111",
+        download_link: "https://cuty.io/fNeu4l",
         tags: ["combat", "mechanics", "animations"],
-        last_updated: "2025-10-4",
-        file_size: "2.4 MB"
+        last_updated: "2025-10-5 : 5:20 PM",
+        file_size: "196.89 KB"
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const addonsData = [
     },
     {
         id: 3,
-        title: "Rango Chat V9.4",
+        title: "Shop UI",
         description: "La descripción del addon",
         cover_image: "./img/(imagen).jpg",
         version: "1.21+",
