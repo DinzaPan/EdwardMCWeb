@@ -39,10 +39,10 @@ const addonsData = [
         description: "✨!🎃Este addon añade una UI o un sistema que ara que los jugadores al momento de entrar al mundo deben registrarse poniendo nombre de usuario y contraseña para acompletar el registro Si no quieren registrarse los usuarios no podran acceder. Ya Cúando Se Aya Registrado Y Termine De Jugar En El Server Cuando se salgan y Vuelvan a Entrar Al Servidor tendarán que iniciar sesión con su nombre de usuario y contraseña ⚠️Importantes No Olvides Tu Nombre De Usuario Y Contraseña.",
         cover_image: "./img/Registre.jpg",
         version: "1.21+",
-        download_link: "TU_URL_DE_DESCARGA",
+        download_link: "https://cuty.io/IilYSoH4TtS",
         tags: ["Logib", "Registre", "Seguridad"],
         last_updated: "2025-10-5",
-        file_size: "5.7 MB"
+        file_size: "2.16 MB"
     },
     {
         id: 5,
