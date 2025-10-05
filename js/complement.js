@@ -2,8 +2,8 @@
 const addonsData = [
     {
         id: 1,
-        title: "Better Combat",
-        description: "Mejora el sistema de combate de Minecraft con nuevas mecánicas y animaciones. Añade ataques especiales, combos y efectos visuales que transforman completamente la experiencia de combate en el juego.",
+        title: "Custom Command",
+        description: "🌟¡Descubre Command Personalizados Como !kit o !lobby Para Minecraft Bedrock 1.21.93 +! 🚀🌍💖 ",
         cover_image: "./img/Commd.jpg",
         version: "1.21+",
         download_link: "TU_URL_DE_DESCARGA",
