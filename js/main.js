@@ -82,16 +82,19 @@ function setupHamburgerMenu() {
         item.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            if (href === 'https://discord.gg/uhgHaGa4Bv' || href === 'https://youtube.com/@edward_gamer_addon?si=6HLBISxZJP11DJB3') {
-                e.preventDefault();
-                // Para enlaces externos placeholder, no hacer nada
+            // Para enlaces externos, permitir navegación normal y cerrar menú
+            if (href.includes('discord.gg') || href.includes('youtube.com')) {
+                // Permitir que el enlace se abra normalmente (target="_blank" ya está en el HTML)
                 closeMenuFunction();
-            } else if (href === '#') {
-                e.preventDefault();
-                // Para Licencia, no hacer nada pero cerrar menú
+            } else if (href === './sc/licencia.html') {
+                // Para Licencia, permitir navegación normal y cerrar menú
                 closeMenuFunction();
             } else if (href === 'index.html') {
                 // Para Inicio, permitir navegación normal y cerrar menú
+                closeMenuFunction();
+            } else {
+                // Para otros casos, prevenir comportamiento por defecto y cerrar menú
+                e.preventDefault();
                 closeMenuFunction();
             }
         });
