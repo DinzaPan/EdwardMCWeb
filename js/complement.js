@@ -58,7 +58,7 @@ const addonsData = [
     {
         id: 6,
         title: "Menú Warp V9.9",
-        description: "La descripción del addon",
+        description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el "Confi" Descaraga el addon aqui.",
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.111",
         download_link: "TU_URL_DE_DESCARGA",
