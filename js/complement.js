@@ -58,7 +58,7 @@ const addonsData = [
     {
         id: 6,
         title: "Menú Warp V9.9",
-        description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el > Confi < Descaraga el addon aqui.",
+        description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el > Confi < Descarga el Addon Aqui.",
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.111",
         download_link: "https://cuty.io/He9nBZqB7mEA",
@@ -69,11 +69,11 @@ const addonsData = [
     {
         id: 7,
         title: "Custom NPC V4.4",
-        description: "La descripción del addon",
+        description: "⚙️!🎃CustomNPC Para Minecraft Bedrock Funciona Perfecto y tine Varios Utilidades, Este addon de NPC Custom puede ayudarte en tu servidor de Minecraft y puedes encontrar utilidades y la forma de editar y personalizar estos NPC para tu servidor de Minecraft o Realm o simplemente para tu servidor.",
         cover_image: "./img/Npc.jpg",
         version: "1.21.111",
-        download_link: "TU_URL_DE_DESCARGA",
-        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
+        download_link: "https://cuty.io/FQcTTU",
+        tags: ["Npc", "Custom", "Addon"],
         last_updated: "2025-10-5",
         file_size: "1 MB"
     }
