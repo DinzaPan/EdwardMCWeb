@@ -82,7 +82,7 @@ function setupHamburgerMenu() {
         item.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            if (href === 'URL_DISCORD' || href === 'URL_YOUTUBE') {
+            if (href === 'https://discord.gg/uhgHaGa4Bv' || href === 'https://youtube.com/@edward_gamer_addon?si=6HLBISxZJP11DJB3) {
                 e.preventDefault();
                 // Para enlaces externos placeholder, no hacer nada
                 closeMenuFunction();
