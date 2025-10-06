@@ -4,11 +4,11 @@ const addonsData = [
         id: 1,
         title: "Action Stuff ",
         description: "Esta Textura Mejora Tu Mundo Con Animaciones Espectaculares Facil De Activar",
-        cover_image: "./img/(imagen).jpg",
+        cover_image: "./img/Action.jpg",
         version: "1.21+",
-        download_link: "TU_URL_DE_DESCARGA",
-        tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
-        last_updated: "2025-10-4",
+        download_link: "https://cuty.io/g37g",
+        tags: ["Texturas", "Animación", "Golem Animado"],
+        last_updated: "2025-10-5",
         file_size: "5.7 MB"
     },
     {
