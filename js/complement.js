@@ -50,21 +50,21 @@ const addonsData = [
         description: "⚜️!🎃Rango chat Para Minecraft Bedrock Se Añadió Un Menu UI Pará Manejar El Systema De Rango En El Chat Con Facilidad El Menu Solamente Puede Ingresar Los Administradores Con Un Tag : ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ 🗂️🎃Último Agregado : Se Añadió Un Item Custom Qué Solo Se Puede Sacar del Creativo Y Abrilo Es Obligatorio Añadirte Un Tag /tag @s add Admin !",
         cover_image: "./img/Rango.jpg",
         version: "1.21.111",
-        download_link: "TU_URL_DE_DESCARGA",
+        download_link: "https://cuty.io/Wlpks",
         tags: ["Rangos", "Menu UI", "Servidores"],
         last_updated: "2025-10-5",
-        file_size: "5.7 MB"
+        file_size: "360.04 KB"
     },
     {
         id: 6,
         title: "Menú Warp V9.9",
-        description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el "Confi" Descaraga el addon aqui.",
+        description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el > Confi < Descaraga el addon aqui.",
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.111",
-        download_link: "TU_URL_DE_DESCARGA",
+        download_link: "https://cuty.io/He9nBZqB7mEA",
         tags: ["Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
         last_updated: "2025-10-5",
-        file_size: "5.7 MB"
+        file_size: "312.11 KB"
     },
     {
         id: 7,
@@ -75,7 +75,7 @@ const addonsData = [
         download_link: "TU_URL_DE_DESCARGA",
         tags: ["Etiqueta", "Etiqueta", "Etiqueta"],
         last_updated: "2025-10-5",
-        file_size: "5.7 MB"
+        file_size: "1 MB"
     }
 ];
 
