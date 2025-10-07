@@ -2,7 +2,7 @@
 const addonsData = [
     {
         id: 1,
-        title: "Action Stuff ",
+        title: "Actions & Stuff",
         description: "Esta Textura Mejora Tu Mundo Con Animaciones Espectaculares Facil De Activar",
         cover_image: "./img/Action.jpg",
         version: "1.21.111",
@@ -13,7 +13,7 @@ const addonsData = [
     },
     {
         id: 2,
-        title: "Custom Command V6.4",
+        title: "$minecraft Custom Command V6.4",
         description: "🌟¡🎃Descubre Command Personalizados Para Tu Servidor De Minecraft Bedrock Variedad de Comandos Personalizados Para Que Sea Fácil Hacerte Tp Hacia Otros Lobby Etc.🚀🌍 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Como Funciona Este Addon Es Fácil Al Implementar El Addon A Tu Mundo o Servidor Verifique !help Con este Comand Si Le Funciona También Puede Hacerte Tp Como Con El !lobby Como Modificar Las Coordenada ? Fácil Llendo Alos Archivo Del Addon Script y Depues En index.js Tutorial Completo En Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/Commd.jpg",
         version: "1.21.111",
@@ -79,7 +79,7 @@ const addonsData = [
     },
     {
         id: 8,
-        title: "Custom NPC V4.4",
+        title: "$1 Custom NPC V4.4",
         description: "⚙️!🎃CustomNPC Para Minecraft Bedrock Funciona Perfecto y tine Varios Utilidades, Este addon de NPC Custom puede ayudarte en tu servidor de Minecraft y puedes encontrar utilidades y la forma de editar y personalizar estos NPC para tu servidor de Minecraft o Realm o simplemente para tu servidor.",
         cover_image: "./img/Npc.jpg",
         version: "1.21.111",
