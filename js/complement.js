@@ -90,6 +90,28 @@ const addonsData = [
     }
 ];
 
+// Configuración de JSONBin.io - TUS CREDENCIALES
+const JSONBIN_BASE_URL = "https://api.jsonbin.io/v3/b";
+const BIN_ID = "68e3f94dd0ea881f40978bff";
+const MASTER_KEY = "$2a$10$llDNWie9.N2CafYjo7o3.OB/8XZpTocfzmyU2gCwG/bJGYAThWYyC";
+
+// Sistema de carga
+function showLoading() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+        loadingOverlay.classList.remove('hidden');
+    }
+}
+
+function hideLoading() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+        setTimeout(() => {
+            loadingOverlay.classList.add('hidden');
+        }, 1000);
+    }
+}
+
 // Función para obtener un addon por ID
 function getAddonById(id) {
     return addonsData.find(addon => addon.id === parseInt(id));
@@ -118,4 +140,181 @@ function searchAddons(query) {
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('es-ES', options);
+}
+
+// Sistema de reseñas
+async function fetchReviews() {
+    try {
+        const response = await fetch(`${JSONBIN_BASE_URL}/${BIN_ID}/latest`, {
+            headers: {
+                'X-Master-Key': MASTER_KEY,
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Error al cargar las reseñas');
+        }
+        
+        const data = await response.json();
+        return data.record || {};
+    } catch (error) {
+        console.error('Error al obtener reseñas:', error);
+        return {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": []
+        };
+    }
+}
+
+async function saveReviews(reviews) {
+    try {
+        const response = await fetch(`${JSONBIN_BASE_URL}/${BIN_ID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': MASTER_KEY
+            },
+            body: JSON.stringify(reviews)
+        });
+        
+        if (!response.ok) {
+            throw new Error('Error al guardar las reseñas');
+        }
+        
+        return await response.json();
+    } catch (error) {
+        console.error('Error al guardar reseñas:', error);
+        throw error;
+    }
+}
+
+// Obtener reseñas de un addon específico
+async function getReviewsForAddon(addonId) {
+    const reviews = await fetchReviews();
+    return reviews[addonId] || [];
+}
+
+// Obtener reseña del usuario actual para un addon
+async function getUserReviewForAddon(addonId) {
+    const reviews = await getReviewsForAddon(addonId);
+    const userId = getUserId();
+    return reviews.find(review => review.userId === userId);
+}
+
+// Añadir o actualizar reseña (ACTUALIZADA para procesar stickers)
+async function addOrUpdateReview(addonId, rating, comment) {
+    const reviews = await fetchReviews();
+    const userId = getUserId();
+    
+    if (!reviews[addonId]) {
+        reviews[addonId] = [];
+    }
+    
+    const existingReviewIndex = reviews[addonId].findIndex(review => review.userId === userId);
+    
+    if (existingReviewIndex !== -1) {
+        reviews[addonId][existingReviewIndex] = {
+            userId,
+            rating,
+            comment, // El comentario con códigos de stickers
+            timestamp: new Date().toISOString()
+        };
+    } else {
+        reviews[addonId].push({
+            userId,
+            rating,
+            comment, // El comentario con códigos de stickers
+            timestamp: new Date().toISOString()
+        });
+    }
+    
+    await saveReviews(reviews);
+    return reviews[addonId];
+}
+
+// Eliminar reseña
+async function deleteReview(addonId) {
+    const reviews = await fetchReviews();
+    const userId = getUserId();
+    
+    if (reviews[addonId]) {
+        reviews[addonId] = reviews[addonId].filter(review => review.userId !== userId);
+        await saveReviews(reviews);
+    }
+    
+    return reviews[addonId] || [];
+}
+
+// Calcular promedio de calificaciones
+function calculateAverageRating(reviews) {
+    if (!reviews || reviews.length === 0) return 0;
+    
+    const sum = reviews.reduce((total, review) => total + review.rating, 0);
+    return (sum / reviews.length).toFixed(1);
+}
+
+// Generar ID único para usuario (simulado)
+function getUserId() {
+    let userId = localStorage.getItem('edwardmc_userId');
+    if (!userId) {
+        userId = 'user_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('edwardmc_userId', userId);
+    }
+    return userId;
+}
+
+// Renderizar estrellas
+function renderStars(rating, interactive = false, size = 'medium') {
+    const starSize = size === 'small' ? '1rem' : '1.5rem';
+    let starsHtml = '';
+    
+    for (let i = 1; i <= 5; i++) {
+        if (interactive) {
+            starsHtml += `
+                <span class="star ${i <= rating ? 'active' : ''}" data-rating="${i}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="${starSize}" height="${starSize}" viewBox="0 0 24 24" fill="${i <= rating ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </span>
+            `;
+        } else {
+            starsHtml += `
+                <span class="star ${i <= rating ? 'active' : ''}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="${starSize}" height="${starSize}" viewBox="0 0 24 24" fill="${i <= rating ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </span>
+            `;
+        }
+    }
+    
+    return `<div class="stars ${interactive ? 'interactive' : ''} ${size}">${starsHtml}</div>`;
+}
+
+// Función para obtener foto de perfil del usuario
+function getUserProfilePicture() {
+    return "./img/profile/p1.jpg";
+}
+
+// Función para procesar texto con stickers (compatibilidad)
+function processTextWithStickers(text) {
+    if (typeof window.StickerSystem !== 'undefined') {
+        return window.StickerSystem.processStickers(text);
+    }
+    return text;
+}
+
+// Función para procesar texto con stickers en títulos (compatibilidad)
+function processTextWithStickersInTitles(text) {
+    if (typeof window.StickerSystem !== 'undefined') {
+        return window.StickerSystem.processStickersInTitles(text);
+    }
+    return text;
 }
