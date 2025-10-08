@@ -95,6 +95,244 @@ const JSONBIN_BASE_URL = "https://api.jsonbin.io/v3/b";
 const BIN_ID = "68e3f94dd0ea881f40978bff";
 const MASTER_KEY = "$2a$10$llDNWie9.N2CafYjo7o3.OB/8XZpTocfzmyU2gCwG/bJGYAThWYyC";
 
+// Configuración del sistema de cache
+const CACHE_CONFIG = {
+    REVIEWS_CACHE_KEY: 'edwardmc_reviews_cache',
+    CACHE_TIMESTAMP_KEY: 'edwardmc_cache_timestamp',
+    CACHE_DURATION: 5 * 60 * 1000, // 5 minutos en milisegundos
+    PENDING_REVIEWS_KEY: 'edwardmc_pending_reviews'
+};
+
+// Sistema de cache para reseñas
+class ReviewsCache {
+    constructor() {
+        this.isOnline = true;
+        this.pendingSync = this.getPendingReviews();
+        this.init();
+    }
+
+    init() {
+        // Verificar conexión
+        this.checkConnection();
+        // Sincronizar pendientes al cargar
+        this.syncPendingReviews();
+    }
+
+    // Verificar si el cache está vigente
+    isCacheValid() {
+        const timestamp = localStorage.getItem(CACHE_CONFIG.CACHE_TIMESTAMP_KEY);
+        if (!timestamp) return false;
+        
+        const now = Date.now();
+        const cacheTime = parseInt(timestamp);
+        return (now - cacheTime) < CACHE_CONFIG.CACHE_DURATION;
+    }
+
+    // Guardar reseñas en cache
+    saveToCache(reviews) {
+        try {
+            localStorage.setItem(CACHE_CONFIG.REVIEWS_CACHE_KEY, JSON.stringify(reviews));
+            localStorage.setItem(CACHE_CONFIG.CACHE_TIMESTAMP_KEY, Date.now().toString());
+            console.log('Reseñas guardadas en cache local');
+        } catch (error) {
+            console.error('Error guardando en cache:', error);
+        }
+    }
+
+    // Obtener reseñas del cache
+    getFromCache() {
+        try {
+            const cached = localStorage.getItem(CACHE_CONFIG.REVIEWS_CACHE_KEY);
+            return cached ? JSON.parse(cached) : null;
+        } catch (error) {
+            console.error('Error obteniendo del cache:', error);
+            return null;
+        }
+    }
+
+    // Guardar reseña pendiente de sincronización
+    savePendingReview(addonId, rating, comment) {
+        const pending = this.getPendingReviews();
+        const review = {
+            addonId,
+            rating,
+            comment,
+            timestamp: new Date().toISOString(),
+            userId: getUserId()
+        };
+        
+        pending.push(review);
+        localStorage.setItem(CACHE_CONFIG.PENDING_REVIEWS_KEY, JSON.stringify(pending));
+        return review;
+    }
+
+    // Obtener reseñas pendientes
+    getPendingReviews() {
+        try {
+            const pending = localStorage.getItem(CACHE_CONFIG.PENDING_REVIEWS_KEY);
+            return pending ? JSON.parse(pending) : [];
+        } catch (error) {
+            console.error('Error obteniendo reseñas pendientes:', error);
+            return [];
+        }
+    }
+
+    // Limpiar reseñas pendientes
+    clearPendingReviews() {
+        localStorage.removeItem(CACHE_CONFIG.PENDING_REVIEWS_KEY);
+    }
+
+    // Sincronizar reseñas pendientes con JSONBin
+    async syncPendingReviews() {
+        const pending = this.getPendingReviews();
+        if (pending.length === 0 || !this.isOnline) return;
+
+        console.log(`Sincronizando ${pending.length} reseñas pendientes...`);
+        
+        for (const review of pending) {
+            try {
+                await this.syncSingleReview(review);
+            } catch (error) {
+                console.error('Error sincronizando reseña:', error);
+                break; // Si falla una, paramos para no perder las demás
+            }
+        }
+
+        // Actualizar cache después de sincronizar
+        await this.fetchAndUpdateCache();
+    }
+
+    // Sincronizar una sola reseña
+    async syncSingleReview(review) {
+        const reviews = await this.fetchReviewsFromAPI();
+        
+        if (!reviews[review.addonId]) {
+            reviews[review.addonId] = [];
+        }
+
+        const existingIndex = reviews[review.addonId].findIndex(r => r.userId === review.userId);
+        
+        if (existingIndex !== -1) {
+            reviews[review.addonId][existingIndex] = {
+                userId: review.userId,
+                rating: review.rating,
+                comment: review.comment,
+                timestamp: review.timestamp
+            };
+        } else {
+            reviews[review.addonId].push({
+                userId: review.userId,
+                rating: review.rating,
+                comment: review.comment,
+                timestamp: review.timestamp
+            });
+        }
+
+        await this.saveReviewsToAPI(reviews);
+    }
+
+    // Verificar conexión a internet
+    checkConnection() {
+        this.isOnline = navigator.onLine;
+        
+        // Escuchar cambios en la conexión
+        window.addEventListener('online', () => {
+            this.isOnline = true;
+            this.syncPendingReviews();
+        });
+        
+        window.addEventListener('offline', () => {
+            this.isOnline = false;
+        });
+    }
+
+    // Obtener reseñas (con cache)
+    async getReviews() {
+        // Primero intentar con cache válido
+        if (this.isCacheValid()) {
+            const cached = this.getFromCache();
+            if (cached) {
+                console.log('Usando reseñas desde cache local');
+                return cached;
+            }
+        }
+
+        // Si no hay cache válido, obtener de API
+        return await this.fetchAndUpdateCache();
+    }
+
+    // Obtener reseñas desde API y actualizar cache
+    async fetchAndUpdateCache() {
+        try {
+            const reviews = await this.fetchReviewsFromAPI();
+            this.saveToCache(reviews);
+            console.log('Reseñas actualizadas desde JSONBin');
+            return reviews;
+        } catch (error) {
+            console.error('Error obteniendo reseñas:', error);
+            // Si falla la API, usar cache aunque sea viejo
+            const cached = this.getFromCache();
+            if (cached) {
+                console.log('Usando cache antiguo por fallo de conexión');
+                return cached;
+            }
+            throw error;
+        }
+    }
+
+    // Obtener reseñas desde JSONBin
+    async fetchReviewsFromAPI() {
+        const response = await fetch(`${JSONBIN_BASE_URL}/${BIN_ID}/latest`, {
+            headers: {
+                'X-Master-Key': MASTER_KEY,
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('Error al cargar las reseñas desde JSONBin');
+        }
+        
+        const data = await response.json();
+        return data.record || this.getDefaultReviewsStructure();
+    }
+
+    // Guardar reseñas en JSONBin
+    async saveReviewsToAPI(reviews) {
+        const response = await fetch(`${JSONBIN_BASE_URL}/${BIN_ID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': MASTER_KEY
+            },
+            body: JSON.stringify(reviews)
+        });
+        
+        if (!response.ok) {
+            throw new Error('Error al guardar las reseñas en JSONBin');
+        }
+        
+        return await response.json();
+    }
+
+    // Estructura por defecto para reseñas
+    getDefaultReviewsStructure() {
+        return {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": []
+        };
+    }
+}
+
+// Instancia global del cache
+const reviewsCache = new ReviewsCache();
+
 // Sistema de carga
 function showLoading() {
     const loadingOverlay = document.getElementById('loadingOverlay');
@@ -142,53 +380,16 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('es-ES', options);
 }
 
-// Sistema de reseñas
+// Sistema de reseñas (ACTUALIZADO con cache)
 async function fetchReviews() {
-    try {
-        const response = await fetch(`${JSONBIN_BASE_URL}/${BIN_ID}/latest`, {
-            headers: {
-                'X-Master-Key': MASTER_KEY,
-                'Content-Type': 'application/json'
-            }
-        });
-        
-        if (!response.ok) {
-            throw new Error('Error al cargar las reseñas');
-        }
-        
-        const data = await response.json();
-        return data.record || {};
-    } catch (error) {
-        console.error('Error al obtener reseñas:', error);
-        return {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": []
-        };
-    }
+    return await reviewsCache.getReviews();
 }
 
 async function saveReviews(reviews) {
     try {
-        const response = await fetch(`${JSONBIN_BASE_URL}/${BIN_ID}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Master-Key': MASTER_KEY
-            },
-            body: JSON.stringify(reviews)
-        });
-        
-        if (!response.ok) {
-            throw new Error('Error al guardar las reseñas');
-        }
-        
-        return await response.json();
+        await reviewsCache.saveReviewsToAPI(reviews);
+        reviewsCache.saveToCache(reviews); // Actualizar cache local
+        return reviews;
     } catch (error) {
         console.error('Error al guardar reseñas:', error);
         throw error;
@@ -205,51 +406,142 @@ async function getReviewsForAddon(addonId) {
 async function getUserReviewForAddon(addonId) {
     const reviews = await getReviewsForAddon(addonId);
     const userId = getUserId();
+    
+    // También verificar en reseñas pendientes
+    const pending = reviewsCache.getPendingReviews();
+    const pendingReview = pending.find(review => 
+        review.addonId === addonId.toString() && review.userId === userId
+    );
+    
+    if (pendingReview) {
+        return {
+            userId: pendingReview.userId,
+            rating: pendingReview.rating,
+            comment: pendingReview.comment,
+            timestamp: pendingReview.timestamp,
+            pending: true
+        };
+    }
+    
     return reviews.find(review => review.userId === userId);
 }
 
-// Añadir o actualizar reseña (ACTUALIZADA para procesar stickers)
+// Añadir o actualizar reseña (ACTUALIZADA con sistema de cache)
 async function addOrUpdateReview(addonId, rating, comment) {
-    const reviews = await fetchReviews();
     const userId = getUserId();
     
-    if (!reviews[addonId]) {
-        reviews[addonId] = [];
-    }
-    
-    const existingReviewIndex = reviews[addonId].findIndex(review => review.userId === userId);
-    
-    if (existingReviewIndex !== -1) {
-        reviews[addonId][existingReviewIndex] = {
-            userId,
-            rating,
-            comment, // El comentario con códigos de stickers
-            timestamp: new Date().toISOString()
-        };
+    if (reviewsCache.isOnline) {
+        // Si hay conexión, guardar directamente en JSONBin
+        const reviews = await fetchReviews();
+        
+        if (!reviews[addonId]) {
+            reviews[addonId] = [];
+        }
+        
+        const existingReviewIndex = reviews[addonId].findIndex(review => review.userId === userId);
+        
+        if (existingReviewIndex !== -1) {
+            reviews[addonId][existingReviewIndex] = {
+                userId,
+                rating,
+                comment,
+                timestamp: new Date().toISOString()
+            };
+        } else {
+            reviews[addonId].push({
+                userId,
+                rating,
+                comment,
+                timestamp: new Date().toISOString()
+            });
+        }
+        
+        await saveReviews(reviews);
+        return reviews[addonId];
     } else {
-        reviews[addonId].push({
-            userId,
-            rating,
-            comment, // El comentario con códigos de stickers
-            timestamp: new Date().toISOString()
-        });
+        // Sin conexión, guardar en cache local como pendiente
+        console.log('Sin conexión, guardando reseña en cache local');
+        reviewsCache.savePendingReview(addonId.toString(), rating, comment);
+        
+        // Actualizar cache local para reflejar el cambio inmediatamente
+        const cachedReviews = reviewsCache.getFromCache() || reviewsCache.getDefaultReviewsStructure();
+        if (!cachedReviews[addonId]) {
+            cachedReviews[addonId] = [];
+        }
+        
+        const existingIndex = cachedReviews[addonId].findIndex(review => review.userId === userId);
+        
+        if (existingIndex !== -1) {
+            cachedReviews[addonId][existingIndex] = {
+                userId,
+                rating,
+                comment,
+                timestamp: new Date().toISOString()
+            };
+        } else {
+            cachedReviews[addonId].push({
+                userId,
+                rating,
+                comment,
+                timestamp: new Date().toISOString()
+            });
+        }
+        
+        reviewsCache.saveToCache(cachedReviews);
+        return cachedReviews[addonId];
     }
-    
-    await saveReviews(reviews);
-    return reviews[addonId];
 }
 
-// Eliminar reseña
+// Eliminar reseña (ACTUALIZADA con sistema de cache)
 async function deleteReview(addonId) {
-    const reviews = await fetchReviews();
     const userId = getUserId();
     
-    if (reviews[addonId]) {
-        reviews[addonId] = reviews[addonId].filter(review => review.userId !== userId);
-        await saveReviews(reviews);
+    if (reviewsCache.isOnline) {
+        const reviews = await fetchReviews();
+        
+        if (reviews[addonId]) {
+            reviews[addonId] = reviews[addonId].filter(review => review.userId !== userId);
+            await saveReviews(reviews);
+        }
+        
+        return reviews[addonId] || [];
+    } else {
+        // Sin conexión, eliminar de cache local
+        console.log('Sin conexión, eliminando reseña del cache local');
+        
+        // Eliminar de pendientes
+        const pending = reviewsCache.getPendingReviews().filter(review => 
+            !(review.addonId === addonId.toString() && review.userId === userId)
+        );
+        localStorage.setItem(CACHE_CONFIG.PENDING_REVIEWS_KEY, JSON.stringify(pending));
+        
+        // Actualizar cache local
+        const cachedReviews = reviewsCache.getFromCache() || reviewsCache.getDefaultReviewsStructure();
+        if (cachedReviews[addonId]) {
+            cachedReviews[addonId] = cachedReviews[addonId].filter(review => review.userId !== userId);
+            reviewsCache.saveToCache(cachedReviews);
+        }
+        
+        return cachedReviews[addonId] || [];
+    }
+}
+
+// Forzar sincronización de reseñas
+async function forceSyncReviews() {
+    if (!reviewsCache.isOnline) {
+        console.log('No hay conexión para sincronizar');
+        return false;
     }
     
-    return reviews[addonId] || [];
+    try {
+        await reviewsCache.syncPendingReviews();
+        reviewsCache.clearPendingReviews();
+        console.log('Sincronización completada');
+        return true;
+    } catch (error) {
+        console.error('Error en sincronización:', error);
+        return false;
+    }
 }
 
 // Calcular promedio de calificaciones
@@ -318,3 +610,21 @@ function processTextWithStickersInTitles(text) {
     }
     return text;
 }
+
+// Sincronizar automáticamente al cargar la página si hay conexión
+document.addEventListener('DOMContentLoaded', function() {
+    if (reviewsCache.isOnline) {
+        // Sincronizar pendientes después de 2 segundos
+        setTimeout(() => {
+            reviewsCache.syncPendingReviews();
+        }, 2000);
+    }
+    
+    // Mostrar estado de conexión en consola
+    console.log(`Estado conexión: ${reviewsCache.isOnline ? 'En línea' : 'Sin conexión'}`);
+    
+    const pending = reviewsCache.getPendingReviews();
+    if (pending.length > 0) {
+        console.log(`${pending.length} reseñas pendientes de sincronización`);
+    }
+});
