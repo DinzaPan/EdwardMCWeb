@@ -527,7 +527,7 @@ body {
     flex-shrink: 0;
 }
 
-/* ESTILOS PARA EL SISTEMA DE STICKERS (NUEVOS) */
+/* ESTILOS PARA EL SISTEMA DE STICKERS (MEJORADOS) */
 .custom-sticker {
     display: inline-block;
     width: 1.5rem;
@@ -567,17 +567,33 @@ body {
     border: 1px solid var(--dark-border);
     border-radius: var(--rounded);
     padding: 1rem;
-    z-index: 1000;
+    z-index: 1001;
     box-shadow: var(--shadow-lg);
     margin-top: 0.5rem;
     max-height: 15rem;
     overflow-y: auto;
+    animation: stickerPickerFadeIn 0.2s ease-out;
+}
+
+@keyframes stickerPickerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sticker-picker-header {
     margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--dark-border);
+    position: sticky;
+    top: 0;
+    background-color: var(--dark-card);
+    z-index: 1;
 }
 
 .sticker-picker-header h4 {
@@ -672,6 +688,25 @@ body {
 .review-actions .sticker-picker-toggle:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+/* Scroll personalizado para el selector de stickers */
+.sticker-picker::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sticker-picker::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+    border-radius: 3px;
+}
+
+.sticker-picker::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.sticker-picker::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
 }
 
 /* Responsive */
