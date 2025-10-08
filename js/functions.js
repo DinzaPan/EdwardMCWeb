@@ -7,6 +7,9 @@ const stickersConfig = {
     "minecraft": "./img/stikers/minecraft.png"
 };
 
+// Variable global para controlar el picker activo
+let activeStickerPicker = null;
+
 // Función para procesar texto y convertir códigos de stickers en imágenes
 function processStickers(text) {
     if (!text) return '';
@@ -61,6 +64,9 @@ function addStickerToText(textarea, stickerCode) {
     // Disparar evento de cambio
     const event = new Event('input', { bubbles: true });
     textarea.dispatchEvent(event);
+    
+    // Cerrar el picker después de añadir un sticker
+    closeStickerPicker();
 }
 
 // Función para crear un selector de stickers
@@ -68,6 +74,7 @@ function createStickerPicker(textareaId) {
     const stickers = getAvailableStickers();
     const container = document.createElement('div');
     container.className = 'sticker-picker';
+    container.id = `sticker-picker-${textareaId}`;
     
     const pickerHeader = document.createElement('div');
     pickerHeader.className = 'sticker-picker-header';
@@ -96,7 +103,64 @@ function createStickerPicker(textareaId) {
     });
     
     container.appendChild(stickersGrid);
+    
+    // Añadir evento para cerrar al hacer scroll fuera
+    container.addEventListener('scroll', function() {
+        // Mantener el picker abierto durante el scroll
+    });
+    
     return container;
+}
+
+// Función para mostrar el selector de stickers
+function showStickerPicker(textareaId) {
+    closeStickerPicker(); // Cerrar cualquier picker abierto
+    
+    const textarea = document.getElementById(textareaId);
+    if (!textarea) return;
+    
+    const parent = textarea.parentElement;
+    const picker = createStickerPicker(textareaId);
+    parent.appendChild(picker);
+    
+    activeStickerPicker = {
+        element: picker,
+        textareaId: textareaId
+    };
+    
+    // Añadir evento para cerrar al hacer clic fuera
+    setTimeout(() => {
+        document.addEventListener('click', closeStickerPickerOnClickOutside);
+    }, 10);
+}
+
+// Función para cerrar el selector de stickers
+function closeStickerPicker() {
+    if (activeStickerPicker) {
+        activeStickerPicker.element.remove();
+        activeStickerPicker = null;
+        document.removeEventListener('click', closeStickerPickerOnClickOutside);
+    }
+}
+
+// Función para manejar clics fuera del selector
+function closeStickerPickerOnClickOutside(event) {
+    if (activeStickerPicker && !activeStickerPicker.element.contains(event.target)) {
+        // Verificar si el clic no fue en el botón del sticker
+        const stickerButton = document.querySelector('.sticker-picker-toggle');
+        if (!stickerButton || !stickerButton.contains(event.target)) {
+            closeStickerPicker();
+        }
+    }
+}
+
+// Función para alternar el selector de stickers
+function toggleStickerPicker(textareaId) {
+    if (activeStickerPicker && activeStickerPicker.textareaId === textareaId) {
+        closeStickerPicker();
+    } else {
+        showStickerPicker(textareaId);
+    }
 }
 
 // Inicializar sistema de stickers en elementos específicos
@@ -122,17 +186,12 @@ function initStickersForElement(elementId) {
             const toggleBtn = document.createElement('button');
             toggleBtn.type = 'button';
             toggleBtn.className = 'sticker-picker-toggle';
-            toggleBtn.innerHTML = '😊';
+            toggleBtn.innerHTML = '😊 Añadir Sticker';
             toggleBtn.title = 'Añadir sticker';
             
-            toggleBtn.addEventListener('click', () => {
-                const existingPicker = parent.querySelector('.sticker-picker');
-                if (existingPicker) {
-                    existingPicker.remove();
-                } else {
-                    const picker = createStickerPicker(elementId);
-                    parent.appendChild(picker);
-                }
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevenir que se cierre inmediatamente
+                toggleStickerPicker(elementId);
             });
             
             parent.style.position = 'relative';
@@ -164,6 +223,13 @@ function processAllStickers() {
     });
 }
 
+// Cerrar el picker cuando se presiona Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && activeStickerPicker) {
+        closeStickerPicker();
+    }
+});
+
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     processAllStickers();
@@ -190,6 +256,9 @@ window.StickerSystem = {
     getAvailableStickers,
     addStickerToText,
     createStickerPicker,
+    showStickerPicker,
+    closeStickerPicker,
+    toggleStickerPicker,
     initStickersForElement,
     processAllStickers
 };
