@@ -4,7 +4,14 @@ const stickersConfig = {
     "heart": "./img/stikers/heart.png",
     "pollo": "./img/stikers/pollo.png",
     "fire": "./img/stikers/fire.gif",
-    "minecraft": "./img/stikers/minecraft.png"
+    "minecraft": "./img/stikers/minecraft.png",
+    "axolotl": "./img/stikers/axolotl.png",
+    "frog": "./img/stikers/frog.gif",
+    "happy-ghast": "./img/stikers/happy-ghast.png",
+    "chestnut": "./img/stikers/chestnut.png",
+    "think": "./img/stikers/think.gif",
+    "sad": "./img/stikers/sad.gif",
+    "eyeroll": "./img/stikers/eyeroll.gif"
 };
 
 // Variable global para controlar el picker activo
