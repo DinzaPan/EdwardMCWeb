@@ -206,6 +206,7 @@ class ReviewsCache {
     async syncSingleReview(review) {
         const reviews = await this.fetchReviewsFromAPI();
         
+        // Asegurar que existe el array para este addonId
         if (!reviews[review.addonId]) {
             reviews[review.addonId] = [];
         }
@@ -315,18 +316,14 @@ class ReviewsCache {
         return await response.json();
     }
 
-    // Estructura por defecto para reseñas
+    // Estructura por defecto para reseñas (AHORA DINÁMICA)
     getDefaultReviewsStructure() {
-        return {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": []
-        };
+        // Crear estructura dinámica basada en los addons existentes
+        const structure = {};
+        addonsData.forEach(addon => {
+            structure[addon.id] = [];
+        });
+        return structure;
     }
 }
 
@@ -396,10 +393,17 @@ async function saveReviews(reviews) {
     }
 }
 
-// Obtener reseñas de un addon específico
+// Obtener reseñas de un addon específico (ACTUALIZADA - maneja IDs dinámicos)
 async function getReviewsForAddon(addonId) {
     const reviews = await fetchReviews();
-    return reviews[addonId] || [];
+    
+    // Si no existe el array para este addonId, crearlo
+    if (!reviews[addonId]) {
+        reviews[addonId] = [];
+        // No guardamos automáticamente para evitar muchas llamadas a la API
+    }
+    
+    return reviews[addonId];
 }
 
 // Obtener reseña del usuario actual para un addon
@@ -426,7 +430,7 @@ async function getUserReviewForAddon(addonId) {
     return reviews.find(review => review.userId === userId);
 }
 
-// Añadir o actualizar reseña (ACTUALIZADA con sistema de cache)
+// Añadir o actualizar reseña (ACTUALIZADA con sistema de cache y IDs dinámicos)
 async function addOrUpdateReview(addonId, rating, comment) {
     const userId = getUserId();
     
@@ -434,6 +438,7 @@ async function addOrUpdateReview(addonId, rating, comment) {
         // Si hay conexión, guardar directamente en JSONBin
         const reviews = await fetchReviews();
         
+        // Asegurar que existe el array para este addonId
         if (!reviews[addonId]) {
             reviews[addonId] = [];
         }
@@ -465,6 +470,8 @@ async function addOrUpdateReview(addonId, rating, comment) {
         
         // Actualizar cache local para reflejar el cambio inmediatamente
         const cachedReviews = reviewsCache.getFromCache() || reviewsCache.getDefaultReviewsStructure();
+        
+        // Asegurar que existe el array para este addonId
         if (!cachedReviews[addonId]) {
             cachedReviews[addonId] = [];
         }
@@ -492,7 +499,7 @@ async function addOrUpdateReview(addonId, rating, comment) {
     }
 }
 
-// Eliminar reseña (ACTUALIZADA con sistema de cache)
+// Eliminar reseña (ACTUALIZADA con sistema de cache y IDs dinámicos)
 async function deleteReview(addonId) {
     const userId = getUserId();
     
