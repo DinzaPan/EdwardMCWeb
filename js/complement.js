@@ -371,10 +371,45 @@ function searchAddons(query) {
     );
 }
 
-// Función para formatear fechas
+// Función para formatear fechas (CORREGIDA)
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('es-ES', options);
+    try {
+        // Manejar diferentes formatos de fecha
+        let date;
+        
+        if (dateString.includes('-')) {
+            // Formato YYYY-MM-DD
+            date = new Date(dateString);
+        } else if (dateString.includes('/')) {
+            // Formato MM/DD/YYYY o DD/MM/YYYY
+            const parts = dateString.split('/');
+            if (parts.length === 3) {
+                // Asumir formato MM/DD/YYYY
+                date = new Date(parts[2], parts[0] - 1, parts[1]);
+            }
+        } else {
+            // Intentar parsear directamente
+            date = new Date(dateString);
+        }
+        
+        // Verificar si la fecha es válida
+        if (isNaN(date.getTime())) {
+            console.warn('Fecha inválida:', dateString);
+            return 'Fecha no disponible';
+        }
+        
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            timeZone: 'UTC' // Para evitar problemas de zona horaria
+        };
+        
+        return date.toLocaleDateString('es-ES', options);
+    } catch (error) {
+        console.error('Error formateando fecha:', error, dateString);
+        return 'Fecha no disponible';
+    }
 }
 
 // Sistema de reseñas (ACTUALIZADO con cache)
@@ -616,6 +651,20 @@ function processTextWithStickersInTitles(text) {
         return window.StickerSystem.processStickersInTitles(text);
     }
     return text;
+}
+
+// Función para actualizar la fecha de un addon
+function updateAddonDate(addonId, newDate) {
+    const addon = getAddonById(addonId);
+    if (addon) {
+        addon.last_updated = newDate;
+        // Forzar re-renderizado de los addons
+        if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+            renderAddons(getAllAddons());
+        }
+        return true;
+    }
+    return false;
 }
 
 // Sincronizar automáticamente al cargar la página si hay conexión
