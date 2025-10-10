@@ -8,7 +8,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/g37g",
         tags: ["Texturas", "Animación", "Golem Animado"],
-        last_updated: "2025-10-6",
+        last_updated: "2025-10-10",
         file_size: "16.97 MB"
     },
     {
@@ -19,7 +19,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/fNeu4l",
         tags: ["custom", "command", "personalizado"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "196.89 KB"
     },
     {
@@ -30,7 +30,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/slCCvU",
         tags: ["Bienvenida", "Mensaje", "servidores"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "207.97 KB"
     },
     {
@@ -41,7 +41,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/WeeFetphDuKo",
         tags: ["Tienda", "Dinero", "Menu UI"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "139.31 KB" 
     },
     {
@@ -52,7 +52,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/IilYSoH4TtS",
         tags: ["Login", "Registre", "Seguridad"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "2.16 MB"
     },
     {
@@ -63,7 +63,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/Wlpks",
         tags: ["Rangos", "Menu UI", "Servidores"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "360.04 KB"
     },
     {
@@ -74,7 +74,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/He9nBZqB7mEA",
         tags: ["Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "312.11 KB"
     },
     {
@@ -85,7 +85,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/FQcTTU",
         tags: ["Npc", "Custom", "Addon"],
-        last_updated: "2025-10-5",
+        last_updated: "2025-10-10",
         file_size: "1 MB"
     }
 ];
