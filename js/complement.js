@@ -8,7 +8,7 @@ const addonsData = [
         version: "1.21.113",
         download_link: "https://cuty.io/g37g",
         tags: ["Texturas", "Animación", "Golem Animado"],
-        last_updated: "2025-10-10",
+        last_updated: "2025-10-11",
         file_size: "16.97 MB"
     },
     {
