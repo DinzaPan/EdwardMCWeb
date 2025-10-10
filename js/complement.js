@@ -2,7 +2,7 @@
 const addonsData = [
     {
         id: 1,
-        title: " $happy-ghast Actions & Stuff 1.6",
+        title: "$happy-ghast Actions & Stuff 1.6",
         description: "$1Esta Textura Mejora Tu Mundo Con Animaciones Espectaculares Facil De Activar Para Tu Mundo de Survival O Para Servidores De Minecraft Bedrock",
         cover_image: "./img/Action.jpg",
         version: "1.21.113",
