@@ -24,6 +24,17 @@ const addonsData = [
     },
     {
         id: 3,
+        title: "NightVisión V2.0.0",
+        description: "🎃Addon De Visión Nocturna Infinita Sin Desactivar Los Logro De Tu Mundo Survival Para Minecraft Bedrock 1.21.114",
+        cover_image: "./img/NightVisión.jpg",
+        version: "1.21.114",
+        download_link: "",
+        tags: ["Vison Nocturna", "Sin Desactivar", "Survival", "Logros"],
+        last_updated: "2025-10-21",
+        file_size: "6.47 KB"
+    },
+    {
+        id: 3,
         title: "Welcome System V3.7",
         description: "🎆🎃Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
         cover_image: "./img/Welcome.jpg",
