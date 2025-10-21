@@ -29,7 +29,7 @@ const addonsData = [
         cover_image: "./img/NightVisión.jpg",
         version: "1.21.114",
         download_link: "",
-        tags: ["Vison Nocturna", "Sin Desactivar", "Survival", "Logros"],
+        tags: ["Vison Nocturna", "Sin Desactivar", "Logros" , "Survival"],
         last_updated: "2025-10-21",
         file_size: "6.47 KB"
     },
