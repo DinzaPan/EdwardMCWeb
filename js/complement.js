@@ -28,7 +28,7 @@ const addonsData = [
         description: "🎃Addon De Visión Nocturna Infinita Sin Desactivar Los Logro De Tu Mundo Survival Para Minecraft Bedrock 1.21.114",
         cover_image: "./img/NightVisión.jpg",
         version: "1.21.114",
-        download_link: "",
+        download_link: "https://cuty.io/UwV28JTYf",
         tags: ["Vison Nocturna", "Sin Desactivar", "Logros" , "Survival"],
         last_updated: "2025-10-21",
         file_size: "6.47 KB"
