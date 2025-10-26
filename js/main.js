@@ -116,13 +116,82 @@ function setupHamburgerMenu() {
     });
 }
 
+// Función para renderizar los filtros
+function renderFilters() {
+    const searchSection = document.querySelector('.search-section');
+    const filtersContainer = document.createElement('div');
+    filtersContainer.className = 'filters-container';
+    
+    filtersContainer.innerHTML = `
+        <div class="filters-scroll">
+            <div class="filters-wrapper">
+                <button class="filter-btn active" data-category="Todos">
+                    <span>Todos</span>
+                </button>
+                <button class="filter-btn" data-category="Add-ons">
+                    <span>Add-ons</span>
+                </button>
+                <button class="filter-btn" data-category="Texturas">
+                    <span>Texturas</span>
+                </button>
+                <button class="filter-btn" data-category="Maps">
+                    <span>Maps</span>
+                </button>
+                <button class="filter-btn" data-category="Mejor Valorados">
+                    <span>Mejor Valorados</span>
+                </button>
+            </div>
+        </div>
+    `;
+    
+    // Insertar después del search container
+    const searchContainer = searchSection.querySelector('.search-container');
+    searchSection.insertBefore(filtersContainer, searchContainer.nextSibling);
+    
+    // Agregar event listeners a los botones de filtro
+    const filterButtons = filtersContainer.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', async function() {
+            // Remover clase active de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Agregar clase active al botón clickeado
+            this.classList.add('active');
+            
+            const category = this.getAttribute('data-category');
+            
+            let filteredAddons;
+            if (category === 'Mejor Valorados') {
+                filteredAddons = await getBestRatedAddons();
+            } else {
+                filteredAddons = filterAddonsByCategory(category);
+            }
+            
+            await renderAddons(filteredAddons);
+            
+            // Actualizar título de la página
+            const pageTitle = document.querySelector('.page-title');
+            if (category === 'Todos') {
+                pageTitle.textContent = 'Últimos Addons';
+            } else {
+                pageTitle.textContent = category;
+            }
+            
+            // Limpiar búsqueda si existe
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.value = '';
+            }
+        });
+    });
+}
+
 // Inicializar la página
 document.addEventListener('DOMContentLoaded', function() {
-    showLoading();
+    // Renderizar filtros
+    renderFilters();
     
-    renderAddons(getAllAddons()).then(() => {
-        hideLoading();
-    });
+    // Renderizar todos los addons inicialmente
+    renderAddons(getAllAddons());
     
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
