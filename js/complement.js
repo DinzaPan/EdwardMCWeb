@@ -18,7 +18,7 @@ const addonsData = [
         cover_image: "./img/Commd.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/fNeu4l",
-        tags: ["custom", "command", "personalizado"],
+        tags: ["Add-ons", "custom", "command", "personalizado"],
         last_updated: "2025-10-21",
         file_size: "196.89 KB"
     },
@@ -29,7 +29,7 @@ const addonsData = [
         cover_image: "./img/NightVisión.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/UwV28JTYf",
-        tags: ["Vison Nocturna", "Sin Desactivar", "Logros" , "Survival"],
+        tags: ["Add-ons", "Vison Nocturna", "Sin Desactivar", "Logros" , "Survival"],
         last_updated: "2025-10-21",
         file_size: "6.47 KB"
     },
@@ -40,7 +40,7 @@ const addonsData = [
         cover_image: "./img/Welcome.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/slCCvU",
-        tags: ["Bienvenida", "Mensaje", "servidores"],
+        tags: ["Add-ons", "Bienvenida", "Mensaje", "servidores"],
         last_updated: "2025-10-21",
         file_size: "207.97 KB"
     },
@@ -51,7 +51,7 @@ const addonsData = [
         cover_image: "./img/ShopUI.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/WeeFetphDuKo",
-        tags: ["Tienda", "Dinero", "Menu UI"],
+        tags: ["Add-ons", "Tienda", "Dinero", "Menu UI"],
         last_updated: "2025-10-21",
         file_size: "139.31 KB" 
     },
@@ -62,7 +62,7 @@ const addonsData = [
         cover_image: "./img/Registre.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/IilYSoH4TtS",
-        tags: ["Login", "Registre", "Seguridad"],
+        tags: ["Add-ons", "Login", "Registre", "Seguridad"],
         last_updated: "2025-10-21",
         file_size: "2.16 MB"
     },
@@ -73,7 +73,7 @@ const addonsData = [
         cover_image: "./img/Rango.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/Wlpks",
-        tags: ["Rangos", "Menu UI", "Servidores"],
+        tags: ["Add-ons", "Rangos", "Menu UI", "Servidores"],
         last_updated: "2025-10-21",
         file_size: "360.04 KB"
     },
@@ -84,7 +84,7 @@ const addonsData = [
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/He9nBZqB7mEA",
-        tags: ["Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
+        tags: ["Add-ons", "Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
         last_updated: "2025-10-21",
         file_size: "312.11 KB"
     },
@@ -95,7 +95,7 @@ const addonsData = [
         cover_image: "./img/Npc.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/FQcTTU",
-        tags: ["Npc", "Custom", "Addon"],
+        tags: ["Add-ons", "Npc", "Custom", "Addon"],
         last_updated: "2025-10-21",
         file_size: "1 MB"
     }
@@ -340,23 +340,6 @@ class ReviewsCache {
 
 // Instancia global del cache
 const reviewsCache = new ReviewsCache();
-
-// Sistema de carga
-function showLoading() {
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    if (loadingOverlay) {
-        loadingOverlay.classList.remove('hidden');
-    }
-}
-
-function hideLoading() {
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    if (loadingOverlay) {
-        setTimeout(() => {
-            loadingOverlay.classList.add('hidden');
-        }, 1000);
-    }
-}
 
 // Función para obtener un addon por ID
 function getAddonById(id) {
@@ -676,6 +659,44 @@ function updateAddonDate(addonId, newDate) {
         return true;
     }
     return false;
+}
+
+// NUEVAS FUNCIONES PARA FILTROS
+// Función para filtrar addons por categoría
+function filterAddonsByCategory(category) {
+    if (category === 'Todos') {
+        return getAllAddons();
+    } else if (category === 'Mejor Valorados') {
+        return getBestRatedAddons();
+    } else {
+        return addonsData.filter(addon => 
+            addon.tags.some(tag => tag.toLowerCase() === category.toLowerCase())
+        );
+    }
+}
+
+// Función para obtener los addons mejor valorados
+async function getBestRatedAddons() {
+    const addonsWithRatings = await Promise.all(
+        addonsData.map(async (addon) => {
+            const reviews = await getReviewsForAddon(addon.id);
+            const averageRating = parseFloat(calculateAverageRating(reviews));
+            const reviewsCount = reviews.length;
+            return {
+                ...addon,
+                averageRating,
+                reviewsCount
+            };
+        })
+    );
+    
+    // Ordenar por rating (descendente) y luego por cantidad de reseñas (descendente)
+    return addonsWithRatings.sort((a, b) => {
+        if (b.averageRating !== a.averageRating) {
+            return b.averageRating - a.averageRating;
+        }
+        return b.reviewsCount - a.reviewsCount;
+    });
 }
 
 // Sincronizar automáticamente al cargar la página si hay conexión
