@@ -1004,3 +1004,90 @@ body.menu-open {
 .custom-sticker.animated {
     animation: stickerBounce 0.6s ease;
 }
+
+/* NUEVOS ESTILOS PARA FILTROS */
+.filters-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 1.5rem auto 0;
+    padding: 0 1rem;
+    max-width: 800px;
+}
+
+.filters-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.5rem 0;
+}
+
+.filters-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.filters-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.25rem;
+    min-width: min-content;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--dark-card);
+    border: 2px solid var(--dark-border);
+    border-radius: 50px;
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    min-width: max-content;
+    user-select: none;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.filter-btn span {
+    pointer-events: none;
+}
+
+/* Responsive para filtros */
+@media (max-width: 768px) {
+    .filters-container {
+        padding: 0 0.5rem;
+        margin: 1rem auto 0;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .filters-wrapper {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
