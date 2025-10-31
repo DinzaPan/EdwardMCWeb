@@ -6,7 +6,7 @@ const addonsData = [
         description: "💎 !🎃Esta Textura Mejora Tu Mundo Con Animaciones Espectaculares Facil De Activar Para Tu Mundo de Survival O Para Servidores De Minecraft Bedrock",
         cover_image: "./img/Action.1.7.jpg",
         version: "1.21.114",
-        download_link: "https://cuty.io/obxJIy",
+        download_link: "https://www.mediafire.com/file/ipvnsnszq538rpv/Actions_Stuff_1.7_%2528resources%2529.mcpack/file",
         tags: ["Texturas", "Animación", "Golem Animado"],
         last_updated: "2025-10-21",
         file_size: "18.37 MB"
@@ -28,7 +28,7 @@ const addonsData = [
         description: "🎃Addon De Visión Nocturna Infinita Sin Desactivar Los Logro De Tu Mundo Survival Para Minecraft Bedrock 1.21.114",
         cover_image: "./img/NightVisión.jpg",
         version: "1.21.114",
-        download_link: "https://cuty.io/UwV28JTYf",
+        download_link: "https://www.mediafire.com/file/92k31h7tf5ergsh/Night_vision.mcaddon/file",
         tags: ["Add-ons", "Vison Nocturna", "Sin Desactivar", "Logros" , "Survival"],
         last_updated: "2025-10-21",
         file_size: "6.47 KB"
