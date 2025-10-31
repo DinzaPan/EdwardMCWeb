@@ -98,7 +98,19 @@ const addonsData = [
         tags: ["Add-ons", "Npc", "Custom", "Addon"],
         last_updated: "2025-10-21",
         file_size: "1 MB"
+    },
+    {
+        id: 10,
+        title: "$1 Minecraft Bedrock 1.21.120",
+        description: "Minecraft Bedrock Apk Sin Virús Última Versión 1.21.120",
+        cover_image: "./img/Minecraft.jpg",
+        version: "1.21.120",
+        download_link: "https://www.mediafire.com/file/w7ewouqeaxyb6xj/Minecraft_Bedrock-1.21.120.4-.apk/file",
+        tags: ["Apk", "Minecraft Bedrook", "App"],
+        last_updated: "2025-10-30",
+        file_size: "855,60 MB",
     }
+    
 ];
 
 // Configuración de JSONBin.io - TUS CREDENCIALES
