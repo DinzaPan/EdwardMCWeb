@@ -103,7 +103,7 @@ const addonsData = [
         id: 10,
         title: "$1 Minecraft Bedrock 1.21.120",
         description: "Minecraft Bedrock Apk Sin Virús Última Versión 1.21.120",
-        cover_image: "./img/Minecraft.jpg",
+        cover_image: "./img/mc.jpg",
         version: "1.21.120",
         download_link: "https://www.mediafire.com/file/w7ewouqeaxyb6xj/Minecraft_Bedrock-1.21.120.4-.apk/file",
         tags: ["Apk", "Minecraft Bedrook", "App"],
