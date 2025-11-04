@@ -14,7 +14,7 @@ const addonsData = [
     {
         id: 2,
         title: "$minecraft Custom Command V6.4",
-        description: "🌟¡🎃Descubre Command Personalizados Para Tu Servidor De Minecraft Bedrock Variedad de Comandos Personalizados Para Que Sea Fácil Hacerte Tp Hacia Otros Lobby Etc.🚀🌍 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Como Funciona Este Addon Es Fácil Al Implementar El Addon A Tu Mundo o Servidor Verifique !help Con este Comand Si Le Funciona También Puede Hacerte Tp Como Con El !lobby Como Modificar Las Coordenada ? Fácil Llendo Alos Archivo Del Addon Script y Depues En index.js Tutorial Completo En Mi Canal De Youtube : Edward Gamer Addon",
+        description: "🌟¡Descubre Command Personalizados Para Tu Servidor De Minecraft Bedrock Variedad de Comandos Personalizados Para Que Sea Fácil Hacerte Tp Hacia Otros Lobby Etc.🚀🌍 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Como Funciona Este Addon Es Fácil Al Implementar El Addon A Tu Mundo o Servidor Verifique !help Con este Comand Si Le Funciona También Puede Hacerte Tp Como Con El !lobby Como Modificar Las Coordenada ? Fácil Llendo Alos Archivo Del Addon Script y Depues En index.js Tutorial Completo En Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/Commd.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/fNeu4l",
@@ -25,7 +25,7 @@ const addonsData = [
     {
         id: 9,
         title: "NightVisión V2.0.0",
-        description: "🎃Addon De Visión Nocturna Infinita Sin Desactivar Los Logro De Tu Mundo Survival Para Minecraft Bedrock 1.21.114",
+        description: "🌟 Addon De Visión Nocturna Infinita Sin Desactivar Los Logro De Tu Mundo Survival Para Minecraft Bedrock 1.21.114",
         cover_image: "./img/NightVisión.jpg",
         version: "1.21.120",
         download_link: "https://www.mediafire.com/file/92k31h7tf5ergsh/Night_vision.mcaddon/file",
@@ -36,7 +36,7 @@ const addonsData = [
     {
         id: 3,
         title: "Welcome System V3.8",
-        description: "🎆🎃Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
+        description: "🎆Bienvenido al Addon Welcome System. Dale la bienvenida a tus amigos y jugadores con un sistema. Al unirse a tu mundo, Recibirán Una Bienvenida Perfecto Para Tu Servidor De Minecraft Bedrock. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️Como Modificar El Script Para Que Sea A Tu Gusto Valla Al Los Archivos Del Addon En Script y Depues En main.js Sino Saves Como En Mi Canal De Youtube Esta El Tuturial YT : Edward Gamer Addon.",
         cover_image: "./img/Welcome.jpg",
         version: "1.21.120",
         download_link: "https://cuty.io/SqY2Y",
@@ -47,7 +47,7 @@ const addonsData = [
     {
         id: 4,
         title: "Shop UI V1.6",
-        description: "🏫!🎃Añade una Tienda a Tu Servidor de Minecraft que te Permite Comprar items en Menu UI increíble, Creador Y Creditos Edward Gamer : Cappytqm28.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Este Addon Se  Abre Con El Item Reloj o Clock 🧭 También Se Puede Abrir Escribiendo Esto En El Chat .Shop o .shop Recuerda Añadirte Un Scoreboard añadiendo Dinero Si Quieres El Tutorial Completo en Mi Canal De Youtube : Edward Gamer Addon",
+        description: "🏫!Añade una Tienda a Tu Servidor de Minecraft que te Permite Comprar items en Menu UI increíble, Creador Y Creditos Edward Gamer : Cappytqm28.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Este Addon Se  Abre Con El Item Reloj o Clock 🧭 También Se Puede Abrir Escribiendo Esto En El Chat .Shop o .shop Recuerda Añadirte Un Scoreboard añadiendo Dinero Si Quieres El Tutorial Completo en Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/ShopUI.jpg",
         version: "1.21.120",
         download_link: "https://cuty.io/uIX2",
@@ -58,7 +58,7 @@ const addonsData = [
     {
         id: 5,
         title: "Login Registre V5.4",
-        description: "✨!🎃Este addon añade una UI o un sistema que ara que los jugadores al momento de entrar al mundo deben registrarse poniendo nombre de Usuario y Contraseña Para Completar El Registro Si no quieren registrarse los usuarios no podran acceder.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ📛🎃Ya Cúando Se Aya Registrado Y Termine De Jugar En El Server Cuando se salgan y Vuelvan a Entrar Al Servidor tendarán que iniciar sesión con su nombre de usuario y contraseña.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ⚠️🎃Importantes No Olvides Tu Nombre De Usuario Y Contraseña.",
+        description: "✨!Este addon añade una UI o un sistema que ara que los jugadores al momento de entrar al mundo deben registrarse poniendo nombre de Usuario y Contraseña Para Completar El Registro Si no quieren registrarse los usuarios no podran acceder.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ📛🎃Ya Cúando Se Aya Registrado Y Termine De Jugar En El Server Cuando se salgan y Vuelvan a Entrar Al Servidor tendarán que iniciar sesión con su nombre de usuario y contraseña.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ⚠️🎃Importantes No Olvides Tu Nombre De Usuario Y Contraseña.",
         cover_image: "./img/Registre.jpg",
         version: "1.21.120",
         download_link: "https://cuty.io/ocFHKnd",
@@ -80,7 +80,7 @@ const addonsData = [
     {
         id: 7,
         title: "Menú Warp V9.9",
-        description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el > Confi < Descarga el Addon Aqui.",
+        description: "🔰!Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el > Confi < Descarga el Addon Aqui.",
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.120",
         download_link: "https://cuty.io/pFdAC4fv0",
@@ -91,7 +91,7 @@ const addonsData = [
     {
         id: 8,
         title: "$1 Custom NPC V4.4",
-        description: "⚙️!🎃CustomNPC Para Minecraft Bedrock Funciona Perfecto y tine Varios Utilidades, Este addon de NPC Custom puede ayudarte en tu servidor de Minecraft y puedes encontrar utilidades y la forma de editar y personalizar estos NPC para tu servidor de Minecraft o Realm o simplemente para tu servidor.",
+        description: "⚙️!CustomNPC Para Minecraft Bedrock Funciona Perfecto y tine Varios Utilidades, Este addon de NPC Custom puede ayudarte en tu servidor de Minecraft y puedes encontrar utilidades y la forma de editar y personalizar estos NPC para tu servidor de Minecraft o Realm o simplemente para tu servidor.",
         cover_image: "./img/Npc.jpg",
         version: "1.21.120",
         download_link: "https://cuty.io/FQcTTU",
