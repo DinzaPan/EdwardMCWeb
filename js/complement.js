@@ -72,7 +72,7 @@ const addonsData = [
         description: "⚜️!🎃Rango chat Para Minecraft Bedrock Se Añadió Un Menu UI Pará Manejar El Systema De Rango En El Chat Con Facilidad El Menu Solamente Puede Ingresar Los Administradores Con Un Tag : ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ 🗂️🎃Último Agregado : Se Añadió Un Item Custom Qué Solo Se Puede Sacar del Creativo Y Abrilo Es Obligatorio Añadirte Un Tag /tag @s add Admin !",
         cover_image: "./img/Rango.jpg",
         version: "1.21.114",
-        download_link: "https://cuty.io/Wlpks",
+        download_link: "https://cuty.io/1taV4Fe7KD",
         tags: ["Add-ons", "Rangos", "Menu UI", "Servidores"],
         last_updated: "2025-10-21",
         file_size: "360.04 KB"
@@ -83,7 +83,7 @@ const addonsData = [
         description: "🔰!🎃Se Arreglaron Bug Este añade un Menu Warp con el que podras tener varias opciones para tu Realm Y Tu Servidor Puedes añadir este Menu Warp para utilizar varias opciones como las Warp, Clanes, Bank, Sethome, Trabajos entre otras opciones mas que puedes modificar en el > Confi < Descarga el Addon Aqui.",
         cover_image: "./img/MenuWarp.jpg",
         version: "1.21.114",
-        download_link: "https://cuty.io/He9nBZqB7mEA",
+        download_link: "https://cuty.io/pFdAC4fv0",
         tags: ["Add-ons", "Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
         last_updated: "2025-10-21",
         file_size: "312.11 KB"
