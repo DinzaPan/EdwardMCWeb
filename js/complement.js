@@ -71,7 +71,7 @@ const addonsData = [
         title: "Rank Chat V9.5",
         description: "⚜️!Rango chat Para Minecraft Bedrock Se Añadió Un Menu UI Pará Manejar El Systema De Rango En El Chat Con Facilidad El Menu Solamente Puede Ingresar Los Administradores Con Un Tag : ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ 🗂️🎃Último Agregado : Se Añadió Un Item Custom Qué Solo Se Puede Sacar del Creativo Y Abrilo Es Obligatorio Añadirte Un Tag /tag @s add Admin !",
         cover_image: "./img/Rango.jpg",
-        version: "1.21.120",
+        version: "1.21.121",
         download_link: "https://cuty.io/1taV4Fe7KD",
         tags: ["Add-ons", "Rangos", "Menu UI", "Servidores"],
         last_updated: "2025-11-3",
