@@ -4,7 +4,7 @@ const addonsData = [
         id: 1,
         title: "$minecraft Actions & Stuff 1.8",
         description: "💎 !Esta Textura Mejora Tu Mundo Con Animaciones Espectaculares Facil De Activar Para Tu Mundo de Survival O Para Servidores De Minecraft Bedrock",
-        cover_image: "./img/Action.1.7.jpg",
+        cover_image: "./img/Action.1.8.jpg",
         version: "1.21.121",
         download_link: "https://cuty.io/Dyzec",
         tags: ["Texturas", "Animación", "Golem Animado"],
