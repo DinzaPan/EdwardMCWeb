@@ -8,7 +8,7 @@ const addonsData = [
         version: "1.21.121",
         download_link: "https://cuty.io/Dyzec",
         tags: ["Texturas", "Animación", "Golem Animado"],
-        last_updated: "2025-11-7",
+        last_updated: "2025-11-12",
         file_size: "18.37 MB"
     },
     {
