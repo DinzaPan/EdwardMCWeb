@@ -6,10 +6,10 @@ const addonsData = [
         description: "💎 !Esta Textura Mejora Tu Mundo Con Animaciones Espectaculares Facil De Activar Para Tu Mundo de Survival O Para Servidores De Minecraft Bedrock",
         cover_image: "./img/Action.1.8.jpg",
         version: "1.21.123",
-        download_link: "https://cuty.io/Dyzec",
+        download_link: "https://www.mediafire.com/file/nl6gwjvw9gcoork/Actions_Stuff_1.8_%2528resources%2529.mcpack/file",
         tags: ["Texturas", "Animación", "Golem Animado"],
-        last_updated: "2025-11-12",
-        file_size: "18.37 MB"
+        last_updated: "2025-11-13",
+        file_size: "19.37 MB"
     },
     {
         id: 2,
@@ -102,7 +102,7 @@ const addonsData = [
     {
         id: 10,
         title: "$1 Minecraft Bedrock 1.21.123",
-        description: "Minecraft Bedrock Apk Sin Virús Última Versión 1.21.120",
+        description: "Minecraft Bedrock Apk Sin Virús Última Versión 1.21.123",
         cover_image: "./img/Minecraf.jpg",
         version: "1.21.123",
         download_link: "https://www.mediafire.com/file/462p1d9fed8fa0w/minecraft-1-21-123.apk/file",
