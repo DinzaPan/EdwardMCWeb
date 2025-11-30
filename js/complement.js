@@ -13,9 +13,9 @@ const addonsData = [
     },
     {
         id: 2,
-        title: "$minecraft Custom Command V6.4",
+        title: "$minecraft Custom Command MUY PRONTO",
         description: "🌟¡Descubre Command Personalizados Para Tu Servidor De Minecraft Bedrock Variedad de Comandos Personalizados Para Que Sea Fácil Hacerte Tp Hacia Otros Lobby Etc.🚀🌍 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Como Funciona Este Addon Es Fácil Al Implementar El Addon A Tu Mundo o Servidor Verifique !help Con este Comand Si Le Funciona También Puede Hacerte Tp Como Con El !lobby Como Modificar Las Coordenada ? Fácil Llendo Alos Archivo Del Addon Script y Depues En index.js Tutorial Completo En Mi Canal De Youtube : Edward Gamer Addon",
-        cover_image: "./img/Commd.jpg",
+        cover_image: "./img/Custom.jpg",
         version: "1.21.114",
         download_link: "https://cuty.io/fNeu4l",
         tags: ["Add-ons", "custom", "command", "personalizado"],
