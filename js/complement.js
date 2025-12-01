@@ -8,18 +8,18 @@ const addonsData = [
         version: "1.21.124",
         download_link: "https://www.mediafire.com/file/nl6gwjvw9gcoork/Actions_Stuff_1.8_%2528resources%2529.mcpack/file",
         tags: ["Texturas", "Animación", "Golem Animado"],
-        last_updated: "2025-11-13",
+        last_updated: "2025-11-30",
         file_size: "19.37 MB"
     },
     {
         id: 2,
-        title: "$minecraft MUY PRONTO",
+        title: "$minecraft Custom Commands",
         description: "🌟¡Descubre Command Personalizados Para Tu Servidor De Minecraft Bedrock Variedad de Comandos Personalizados Para Que Sea Fácil Hacerte Tp Hacia Otros Lobby Etc.🚀🌍 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Como Funciona Este Addon Es Fácil Al Implementar El Addon A Tu Mundo o Servidor Verifique !help Con este Comand Si Le Funciona También Puede Hacerte Tp Como Con El !lobby Como Modificar Las Coordenada ? Fácil Llendo Alos Archivo Del Addon Script y Depues En index.js Tutorial Completo En Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/Custom.jpg",
-        version: "1.21.114",
-        download_link: "LOL",
+        version: "1.21.124",
+        download_link: "https://cuty.io/gZuVvH9M",
         tags: ["Add-ons", "custom", "command", "personalizado"],
-        last_updated: "2025-10-21",
+        last_updated: "2025-11-30",
         file_size: "196.89 KB"
     },
     {
@@ -30,7 +30,7 @@ const addonsData = [
         version: "1.21.124",
         download_link: "https://www.mediafire.com/file/92k31h7tf5ergsh/Night_vision.mcaddon/file",
         tags: ["Add-ons", "Vison Nocturna", "Sin Desactivar", "Logros" , "Survival"],
-        last_updated: "2025-11-13",
+        last_updated: "2025-11-30",
         file_size: "6.47 KB"
     },
     {
@@ -41,7 +41,7 @@ const addonsData = [
         version: "1.21.124",
         download_link: "https://cuty.io/SqY2Y",
         tags: ["Add-ons", "Bienvenida", "Mensaje", "servidores"],
-        last_updated: "2025-11-3",
+        last_updated: "2025-11-30",
         file_size: "207.97 KB"
     },
     {
@@ -49,10 +49,10 @@ const addonsData = [
         title: "Shop UI V1.6",
         description: "🏫!Añade una Tienda a Tu Servidor de Minecraft que te Permite Comprar items en Menu UI increíble, Creador Y Creditos Edward Gamer : Cappytqm28.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤ➡️🎃Este Addon Se  Abre Con El Item Reloj o Clock 🧭 También Se Puede Abrir Escribiendo Esto En El Chat .Shop o .shop Recuerda Añadirte Un Scoreboard añadiendo Dinero Si Quieres El Tutorial Completo en Mi Canal De Youtube : Edward Gamer Addon",
         cover_image: "./img/ShopUI.jpg",
-        version: "1.21.121",
+        version: "1.21.124",
         download_link: "https://cuty.io/uIX2",
         tags: ["Add-ons", "Tienda", "Dinero", "Menu UI"],
-        last_updated: "2025-11-3",
+        last_updated: "2025-11-30",
         file_size: "139.31 KB" 
     },
     {
@@ -63,7 +63,7 @@ const addonsData = [
         version: "1.21.121",
         download_link: "https://cuty.io/ocFHKnd",
         tags: ["Add-ons", "Login", "Registre", "Seguridad"],
-        last_updated: "2025-11-3",
+        last_updated: "2025-11-30",
         file_size: "2.16 MB"
     },
     {
@@ -74,7 +74,7 @@ const addonsData = [
         version: "1.21.121",
         download_link: "https://cuty.io/1taV4Fe7KD",
         tags: ["Add-ons", "Rangos", "Menu UI", "Servidores"],
-        last_updated: "2025-11-3",
+        last_updated: "2025-11-30",
         file_size: "360.04 KB"
     },
     {
@@ -85,7 +85,7 @@ const addonsData = [
         version: "1.21.121",
         download_link: "https://cuty.io/pFdAC4fv0",
         tags: ["Add-ons", "Menu UI", "Banco", "Perfil", "Clanes","Trabajo"],
-        last_updated: "2025-11-7",
+        last_updated: "2025-11-30",
         file_size: "312.11 KB"
     },
     {
@@ -96,7 +96,7 @@ const addonsData = [
         version: "1.21.123",
         download_link: "https://cuty.io/FQcTTU",
         tags: ["Add-ons", "Npc", "Custom", "Addon"],
-        last_updated: "2025-11-13",
+        last_updated: "2025-11-30",
         file_size: "1 MB"
     },
     {
